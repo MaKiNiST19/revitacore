@@ -11,21 +11,21 @@ export default function Home() {
   const titleY = useTransform(scrollYProgress, [0, 0.15], ["0%", "-50%"]);
   const titleOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
 
-  // Section 1 (h-[200vh])
+  // Section 1 (h-[150vh])
   const sec1Ref = useRef(null);
   const { scrollYProgress: s1Progress } = useScroll({ target: sec1Ref, offset: ["start start", "end end"] });
-  const l1w = useTransform(s1Progress, [0.2, 0.3], ["0vw", "14vw"]); const o1 = useTransform(s1Progress, [0.3, 0.4], [0, 1]);
-  const l2w = useTransform(s1Progress, [0.4, 0.5], ["0vw", "18vw"]); const o2 = useTransform(s1Progress, [0.5, 0.6], [0, 1]);
-  const l3w = useTransform(s1Progress, [0.6, 0.7], ["0vw", "15vw"]); const o3 = useTransform(s1Progress, [0.7, 0.8], [0, 1]);
+  const l1w = useTransform(s1Progress, [0.1, 0.3], ["0vw", "14vw"]); const o1 = useTransform(s1Progress, [0.2, 0.4], [0, 1]);
+  const l2w = useTransform(s1Progress, [0.3, 0.5], ["0vw", "18vw"]); const o2 = useTransform(s1Progress, [0.4, 0.6], [0, 1]);
+  const l3w = useTransform(s1Progress, [0.5, 0.7], ["0vw", "15vw"]); const o3 = useTransform(s1Progress, [0.6, 0.8], [0, 1]);
 
-  // Section 2 (h-[200vh])
+  // Section 2 (h-[150vh])
   const sec2Ref = useRef(null);
   const { scrollYProgress: s2Progress } = useScroll({ target: sec2Ref, offset: ["start start", "end end"] });
-  const sl1w = useTransform(s2Progress, [0.15, 0.25], ["0vw", "14vw"]); const so1 = useTransform(s2Progress, [0.25, 0.3], [0, 1]);
-  const sl2w = useTransform(s2Progress, [0.3, 0.4], ["0vw", "18vw"]);   const so2 = useTransform(s2Progress, [0.4, 0.45], [0, 1]);
-  const sl3w = useTransform(s2Progress, [0.45, 0.55], ["0vw", "20vw"]); const so3 = useTransform(s2Progress, [0.55, 0.6], [0, 1]);
-  const sl4w = useTransform(s2Progress, [0.6, 0.7], ["0vw", "18vw"]);   const so4 = useTransform(s2Progress, [0.7, 0.75], [0, 1]);
-  const sl5w = useTransform(s2Progress, [0.75, 0.85], ["0vw", "14vw"]); const so5 = useTransform(s2Progress, [0.85, 0.9], [0, 1]);
+  const sl1w = useTransform(s2Progress, [0.1, 0.25], ["0vw", "14vw"]); const so1 = useTransform(s2Progress, [0.2, 0.3], [0, 1]);
+  const sl2w = useTransform(s2Progress, [0.25, 0.4], ["0vw", "18vw"]);   const so2 = useTransform(s2Progress, [0.35, 0.45], [0, 1]);
+  const sl3w = useTransform(s2Progress, [0.4, 0.55], ["0vw", "20vw"]); const so3 = useTransform(s2Progress, [0.5, 0.6], [0, 1]);
+  const sl4w = useTransform(s2Progress, [0.55, 0.7], ["0vw", "18vw"]);   const so4 = useTransform(s2Progress, [0.65, 0.75], [0, 1]);
+  const sl5w = useTransform(s2Progress, [0.7, 0.85], ["0vw", "14vw"]); const so5 = useTransform(s2Progress, [0.8, 0.9], [0, 1]);
 
   // Section 4 (Cap Closing - h-[150vh])
   const sec4Ref = useRef(null);
@@ -71,72 +71,98 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* SECTION 1 - LEFT PINNED : 200vh */}
-      <section ref={sec1Ref} className="h-[200vh] w-full relative z-20">
+      {/* SECTION 1 - LEFT PINNED : 150vh */}
+      <section ref={sec1Ref} className="h-[150vh] w-full relative z-20">
         <div className="sticky top-0 h-screen flex items-center px-8 md:px-24 pointer-events-none">
-          <div className="w-[50%] ml-auto relative mt-16 pointer-events-auto">
-            <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-50 mb-4 text-[#FF6A3D]">Neden Revitacore?</h4>
-            <h3 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 max-w-md leading-tight text-[#111]">
-              Sade Formül. <br/> <span className="text-black/20">Gerçek Destek.</span>
+          <div className="w-[45%] ml-auto relative mt-16 pointer-events-auto bg-white/40 backdrop-blur-3xl p-10 rounded-[2rem] border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
+            <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold mb-4 text-[#FF6A3D] bg-[#FF6A3D]/10 inline-block px-4 py-1.5 rounded-full">Neden Revitacore?</h4>
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-none text-[#111]">
+              Sade Formül. <br/> <span className="text-black/30">Gerçek Destek.</span>
             </h3>
-            <p className="max-w-xs text-sm opacity-80 font-medium leading-relaxed">
+            <p className="text-sm opacity-80 font-medium leading-relaxed max-w-sm">
               Takviye edici gıda alanında gereksiz karmaşıklığa karşı duran bir marka. Bilimsel veriler ışığında şeffaf anlayış. İçinde ne varsa etikette yazar.
             </p>
           </div>
           
           {/* Origin is perfectly aligned and 0-size to branch out naturally */}
           <div className="absolute left-[25vw] top-1/2 w-0 h-0 z-10">
-            <motion.div style={{ rotate: -12 }} className="absolute left-0 top-0 flex items-center origin-left w-max">
-              <motion.div style={{ width: l1w }} className="h-[2px] bg-[#FF6A3D]/40" />
-              <motion.div style={{ opacity: o1, rotate: 12 }} className="ml-4 w-[250px]">
-                <span className="text-[11px] uppercase tracking-[0.2em] font-black text-[#FF6A3D]">01 · Şeffaf İçerik</span>
-                <p className="text-[9px] uppercase font-bold text-black/60 mt-2 leading-tight">Ne koyduğumuzu biliyoruz. Siz de bilmelisiniz.</p>
+            <motion.div style={{ rotate: -15 }} className="absolute left-0 top-0 flex items-center origin-left w-max">
+              <motion.div style={{ width: l1w }} className="h-[1px] bg-gradient-to-r from-[#FF6A3D] to-transparent relative origin-left">
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#FF6A3D] blur-[2px]" />
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#FF6A3D]" />
+              </motion.div>
+              <motion.div style={{ opacity: o1, rotate: 15 }} className="ml-4 w-[280px] bg-white/80 backdrop-blur-xl p-5 rounded-3xl border border-white shadow-2xl">
+                 <div className="flex items-center gap-3 mb-2">
+                    <span className="text-[10px] font-black bg-[#FF6A3D] text-white px-2 py-1 rounded-lg">01</span>
+                    <span className="text-[11px] uppercase tracking-[0.1em] font-black text-[#111]">Şeffaf İçerik</span>
+                 </div>
+                <p className="text-[10px] font-semibold text-black/60 leading-relaxed">Ne koyduğumuzu biliyoruz. Etikette ne yazıyorsa içinde o var. Şeffaflık ilkemizdir.</p>
               </motion.div>
             </motion.div>
+
             <motion.div style={{ rotate: 0 }} className="absolute left-0 top-0 flex items-center origin-left w-max">
-              <motion.div style={{ width: l2w }} className="h-[2px] bg-[#FF6A3D]/40" />
-              <motion.div style={{ opacity: o2, rotate: 0 }} className="ml-4 w-[250px]">
-                <span className="text-[11px] uppercase tracking-[0.2em] font-black text-[#FF6A3D]">02 · Kontrollü Üretim</span>
-                <p className="text-[9px] uppercase font-bold text-black/60 mt-2 leading-tight">Uluslararası kalite standartlarında, kusursuz tescil.</p>
+              <motion.div style={{ width: l2w }} className="h-[1px] bg-gradient-to-r from-[#FF6A3D] to-transparent relative origin-left">
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#FF6A3D] blur-[2px]" />
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#FF6A3D]" />
+              </motion.div>
+              <motion.div style={{ opacity: o2, rotate: 0 }} className="ml-4 w-[280px] bg-white/80 backdrop-blur-xl p-5 rounded-3xl border border-white shadow-2xl">
+                 <div className="flex items-center gap-3 mb-2">
+                    <span className="text-[10px] font-black bg-[#FF6A3D] text-white px-2 py-1 rounded-lg">02</span>
+                    <span className="text-[11px] uppercase tracking-[0.1em] font-black text-[#111]">Kontrollü Üretim</span>
+                 </div>
+                <p className="text-[10px] font-semibold text-black/60 leading-relaxed">Uluslararası kalite standartlarında, sıfır hatayla kusursuz tescil ve üretim süreci.</p>
               </motion.div>
             </motion.div>
-            <motion.div style={{ rotate: 12 }} className="absolute left-0 top-0 flex items-center origin-left w-max">
-              <motion.div style={{ width: l3w }} className="h-[2px] bg-[#FF6A3D]/40" />
-              <motion.div style={{ opacity: o3, rotate: -12 }} className="ml-4 w-[250px]">
-                <span className="text-[11px] uppercase tracking-[0.2em] font-black text-[#FF6A3D]">03 · Uzun Vadeli Güven</span>
-                <p className="text-[9px] uppercase font-bold text-black/60 mt-2 leading-tight">Ürün değil, güvenle ekleyebileceğiniz rutin.</p>
+
+            <motion.div style={{ rotate: 15 }} className="absolute left-0 top-0 flex items-center origin-left w-max">
+              <motion.div style={{ width: l3w }} className="h-[1px] bg-gradient-to-r from-[#FF6A3D] to-transparent relative origin-left">
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#FF6A3D] blur-[2px]" />
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#FF6A3D]" />
+              </motion.div>
+              <motion.div style={{ opacity: o3, rotate: -15 }} className="ml-4 w-[280px] bg-white/80 backdrop-blur-xl p-5 rounded-3xl border border-white shadow-2xl">
+                 <div className="flex items-center gap-3 mb-2">
+                    <span className="text-[10px] font-black bg-[#FF6A3D] text-white px-2 py-1 rounded-lg">03</span>
+                    <span className="text-[11px] uppercase tracking-[0.1em] font-black text-[#111]">Uzun Vadeli Güven</span>
+                 </div>
+                <p className="text-[10px] font-semibold text-black/60 leading-relaxed">Tek seferlik ürün değil, güvenle hayatınıza ekleyebileceğiniz bilimsel bir rutin.</p>
               </motion.div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2 - RIGHT PINNED : 200vh */}
-      <section ref={sec2Ref} className="h-[200vh] w-full relative z-20">
+      {/* SECTION 2 - RIGHT PINNED : 150vh */}
+      <section ref={sec2Ref} className="h-[150vh] w-full relative z-20">
         <div className="sticky top-0 h-screen flex justify-start items-center px-8 md:px-24 pointer-events-none">
-          <div className="w-[50%] flex flex-col items-start text-left relative mt-16 pointer-events-auto">
-            <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-50 mb-4 text-[#FF6A3D]">Ne Sağlar?</h4>
-            <h3 className="text-4xl md:text-5xl font-black tracking-tighter mb-6 max-w-sm leading-tight text-[#111]">
-              Günlük Rutininizi <br/> Destekleyen 3 Temel Alan
+          <div className="w-[45%] flex flex-col items-start text-left relative mt-16 pointer-events-auto bg-white/40 backdrop-blur-3xl p-10 rounded-[2rem] border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
+            <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold mb-4 text-[#FF6A3D] bg-[#FF6A3D]/10 inline-block px-4 py-1.5 rounded-full">Ne Sağlar?</h4>
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-none text-[#111]">
+              Günlük Rutininizi <br/> <span className="text-black/30">Destekleyen Odak</span>
             </h3>
-            <p className="max-w-xs text-sm opacity-80 font-medium leading-relaxed">
-              Magnezyum, Multivitamin ve Omega-3 formülasyonlarımız; günlük beslenmenizi üç temel alanda desteklemek üzere tasarlandı.
+            <p className="text-sm opacity-80 font-medium leading-relaxed max-w-sm">
+              Magnezyum, Multivitamin ve Omega-3 formülasyonlarımız; günlük beslenmenizi üç temel alanda desteklemek üzere amaca yönelik tasarlandı.
             </p>
           </div>
 
           <div className="absolute right-[25vw] top-1/2 w-0 h-0 z-10">
             {[
-              { r: 16, lw: sl1w, op: so1, t: "FAYDA 1 — Mineral Desteği", d: "Temel besin ögelerini dengeler." },
-              { r: 8, lw: sl2w, op: so2, t: "FAYDA 2 — Çoklu Form", d: "Akıllı formülasyon anlayışı." },
-              { r: 0, lw: sl3w, op: so3, t: "FAYDA 3 — Günlük Uygunluk", d: "Rutine kolay entegre edilir." },
-              { r: -8, lw: sl4w, op: so4, t: "FAYDA 4 — Yağ Asidi", d: "EPA/DHA içerikli Omega-3." },
-              { r: -16, lw: sl5w, op: so5, t: "FAYDA 5 — Kalite Testleri", d: "Tüm aşamalarda kalite kontrol." },
+              { r: 20, lw: sl1w, op: so1, t: "Mineral Desteği", d: "Temel besin ögelerini dengeler ve bedeninizi destekler.", step: "F1" },
+              { r: 10, lw: sl2w, op: so2, t: "Çoklu Form", d: "Maksimum emilim için akıllı formülasyon anlayışı.", step: "F2" },
+              { r: 0, lw: sl3w, op: so3, t: "Günlük Uygunluk", d: "Zamanında ve dozunda, rutine doğrudan entegre edilir.", step: "F3" },
+              { r: -10, lw: sl4w, op: so4, t: "Yağ Asidi", d: "Kanıtlanmış EPA/DHA içerikli, saf formda Omega-3.", step: "F4" },
+              { r: -20, lw: sl5w, op: so5, t: "Kalite Testleri", d: "Üretimin tüm aşamalarında şeffaf kalite ve kontrol.", step: "F5" },
             ].map((i, k) => (
               <motion.div key={k} style={{ rotate: i.r }} className="absolute right-0 top-0 flex flex-row-reverse items-center origin-right w-max">
-                <motion.div style={{ width: i.lw }} className="h-[2px] bg-[#FF6A3D]/40" />
-                <motion.div style={{ opacity: i.op, rotate: -i.r }} className="mr-4 w-[220px] text-right">
-                  <span className="text-[10px] uppercase tracking-[0.1em] font-black text-[#FF6A3D]">{i.t}</span>
-                  <p className="text-[9px] uppercase font-bold text-black/60 mt-1 leading-tight">{i.d}</p>
+                <motion.div style={{ width: i.lw }} className="h-[1px] bg-gradient-to-l from-[#FF6A3D] to-transparent relative origin-right">
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#FF6A3D] blur-[2px]" />
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#FF6A3D]" />
+                </motion.div>
+                <motion.div style={{ opacity: i.op, rotate: -i.r }} className="mr-4 w-[250px] text-right bg-white/80 backdrop-blur-xl p-4 rounded-3xl border border-white shadow-2xl">
+                  <div className="flex items-center justify-end gap-3 mb-1.5">
+                    <span className="text-[11px] uppercase tracking-[0.1em] font-black text-[#111]">{i.t}</span>
+                    <span className="text-[9px] font-black bg-[#FF6A3D]/10 text-[#FF6A3D] px-2 py-1 rounded-md">{i.step}</span>
+                  </div>
+                  <p className="text-[9px] font-semibold text-black/60 leading-relaxed">{i.d}</p>
                 </motion.div>
               </motion.div>
             ))}
